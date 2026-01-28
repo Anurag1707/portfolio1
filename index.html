@@ -39,7 +39,7 @@
     </h2>
     <p class="mt-6 text-gray-400 max-w-md text-xl">I build modern, user-friendly web experiences with a focus on clean design and efficient, scalable code. Let’s turn ideas into impactful digital products.</p>
     <div class="mt-8 flex gap-4">
-      <a href="projects.html">
+      <a href="project.html">
       <button 
       
       class="bg-white border border-white border-2 text-black font-bold px-6 py-3 rounded-full hover:bg-black hover:text-white  hover:border-red ">View My Work ↓</button>
@@ -221,40 +221,52 @@ ixid
 
    <!-- Message portion -->
     
-    <div class="bg-black-900 border border-neutral-800 rounded-2xl p-4  ">
-      <form class="space-y-5">
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="text-sm text-gray-400">Your Name</label>
-            <input type="text" placeholder="Anurag Jhariya"
-              class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3 " />
-          </div>
+    <form name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="space-y-5">
 
-          <div>
-            <label class="text-sm text-gray-400">Your Email</label>
-            <input type="email" placeholder="anurag@example.com"
-              class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3  " />
-          </div>
-        </div>
+  <!-- Netlify required -->
+  <input type="hidden" name="form-name" value="contact">
 
-        <div>
-          <label class="text-sm text-gray-400">Subject</label>
-          <input type="text" placeholder="Project Inquiry"
-            class="w-full bg-black border border-neutral-700 rounded-lg px-4 py-3 " />
-        </div>
+  <!-- spam protection -->
+  <p class="hidden">
+    <label>Don’t fill this out: <input name="bot-field"></label>
+  </p>
 
-        <div>
-          <label class="text-sm text-gray-400">Message</label>
-          <textarea rows="4" placeholder="Tell me about your project..."
-            class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3 "></textarea>
-        </div>
-
-        <button
-          class="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-green-500 hover:text-white transition">
-          Send Message 
-        </button>
-      </form>
+  <div class="grid md:grid-cols-2 gap-4">
+    <div>
+      <label class="text-sm text-gray-400">Your Name</label>
+      <input type="text" name="name" placeholder="Ex- Anurag" required
+        class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3">
     </div>
+
+    <div>
+      <label class="text-sm text-gray-400">Your Email</label>
+      <input type="email" name="email" placeholder="xyz@gmail.com" required
+        class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3">
+    </div>
+  </div>
+
+  <div>
+    <label class="text-sm text-gray-400">Subject</label>
+    <input type="text" name="subject"
+      class="w-full bg-black border border-neutral-700 rounded-lg px-4 py-3">
+  </div>
+
+  <div>
+    <label class="text-sm text-gray-400">Message</label>
+    <textarea name="message" rows="4"
+      class="w-full mt-1 bg-black border border-neutral-700 rounded-lg px-4 py-3"></textarea>
+  </div>
+
+  <button type="submit"
+    class="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-green-500 hover:text-white transition">
+    Send Message
+  </button>
+</form>
+
 
   </div>
 </section>
